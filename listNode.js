@@ -247,18 +247,29 @@
 			}
 			
 		//Прогон списка с выполнение какой-то функции
-		forEach(elem, foo){				
+		/*forEach(elem, foo){				
 				let node=elem;
 				while(node !== null){
 				foo(node.key);
 				node = node.next;	
 			}
 			this.length=this.length();
-		}
+		}*/
 		// Преобразование списка в строку.
 			toString(){
 			return JSON.stringify(this.arrAdd());		
-			}		
+			}
+		forEach(cb){
+			this.forEU(cb, v=>true);
+		}
+		forEU(cb, pr){
+			let node=this.head, index=0;
+			while(node){
+				cb(node.key, index);
+				node=node.next;
+				index++;
+			}
+		}
 				
 	}
 	
