@@ -255,10 +255,13 @@
 			}
 			this.length=this.length();
 		}*/
+		
 		// Преобразование списка в строку.
-			toString(){
-			return JSON.stringify(this.arrAdd());		
-			}
+		toString(){
+		return JSON.stringify(this.arrAdd());		
+		}
+		
+		//forEach
 		forEach(cb){
 			this.forEU(cb, v=>true);
 		}
@@ -271,11 +274,10 @@
 			}
 		}
 		
-		//Итератор for (let num of list){}
+		//Итератор for (let num of list){} Не слишком красиво, но работает.
 		[Symbol.iterator]() {
-			let i=0;
+		  let i=0;
 		  let current = this.get(i);
-		  // метод должен вернуть объект с методом next()
 		  return {
 			next() {
 				if (i<list.length) {
