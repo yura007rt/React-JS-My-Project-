@@ -270,6 +270,29 @@
 				index++;
 			}
 		}
+		
+		//Итератор for (let num of list){}
+		[Symbol.iterator]() {
+			let i=0;
+		  let current = this.get(i);
+		  // метод должен вернуть объект с методом next()
+		  return {
+			next() {
+				if (i<list.length) {
+				return {
+				  done: false,
+				  value: list.get(i++)
+				  
+				}; 
+			  } else {
+				return {
+				  done: true
+				  
+				};
+			  }
+			}
+		  }
+		};
 				
 	}
 	
