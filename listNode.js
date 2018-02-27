@@ -74,8 +74,10 @@
 				if (this.head ===  null) {
 					throw new Error('List is empty');
 				} else if (this.head === this.tail) {
+					let el=this.head.key;
 					this.head = null;
 					this.tail = null;
+					return el;
 				}
 				let firstEl=this.head.key;
 				this.head = this.head.next;
@@ -88,8 +90,10 @@
 				if (this.head === null) {
 					throw new Error('List is empty');
 				} else if (this.head === this.tail) {
+					let el=this.head.key;
 					this.head = null;
 					this.tail = null;
+					return el;
 				}
 				let node = this.head;
 				while (node.next !== this.tail) {
